@@ -7,9 +7,10 @@ async function createTravel(req, res, next) {
         await travelService.createTravel({ passengerId, flightId });
 
         res.sendStatus(201);
-    } catch (error) {
-        next(error);
-    };
+    } catch (err) {
+        console.error(err);
+        res.status(422).send(err.message);
+    }
 }
 
 export const travelController = { createTravel };

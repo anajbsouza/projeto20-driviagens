@@ -13,7 +13,7 @@ async function createPassenger(req, res) {
         res.sendStatus(201);
     } catch (err) {
         console.error(err);
-        res.status(500).send(err.message);
+        res.status(422).send(err.message);
     }
 };
 
