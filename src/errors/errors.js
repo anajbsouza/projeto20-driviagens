@@ -1,7 +1,7 @@
 export function conflictError(resource = "Item") {
     return {
         type: "conflict",
-        message: `${resource} já existe!`
+        message: `${resource}`
     }
 }
 
@@ -12,10 +12,10 @@ export function incompleteDataError() {
     }
 }
 
-export function invalidIdError() {
+export function invalidIdError(resource = "Item") {
     return {
-        type: "invalidId",
-        message: `ID inválido! Deve ser um número inteiro maior que zero.`
+        type: "invalid",
+        message: `Formato inválido!`
     }
 }
 
